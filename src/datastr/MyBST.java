@@ -60,4 +60,28 @@ public class MyBST <Ttype>{
 
     }
 
+    public void print() throws Exception {
+        if (isEmpty()) throw new Exception("Koks ir tukšs");
+
+        // TODO izsaukt rekursovo printesanas funkciju
+
+
+    }
+    //TODO izveidit majas ari PostOrder
+    private void printHelpRecursivePreOrder(MyTreeNode tempNode){
+        // Root - Left - right
+        System.out.println(tempNode.getElement());
+
+        // Left
+        if (tempNode.getLeftChild()!= null){
+            System.out.print(" -> LC: " + tempNode.getLeftChild().getElement() + " [" + tempNode.getElement() + "]");
+            printHelpRecursivePreOrder(tempNode.getLeftChild());
+        }
+        // Right
+        if (tempNode.getRightChild()!= null){
+            System.out.print(" -> RC: " + tempNode.getRightChild().getElement() + " [" + tempNode.getElement() + "]");
+            printHelpRecursivePreOrder(tempNode.getRightChild());
+        }
+    }
+
 }
