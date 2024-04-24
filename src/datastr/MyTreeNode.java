@@ -19,7 +19,7 @@ public class MyTreeNode<Ttype> {
     }
 
     public void setElement(Ttype element) {
-        if (element == null){
+        if (element != null){
             this.element = element;
         }
         else {

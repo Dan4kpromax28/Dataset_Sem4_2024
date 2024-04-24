@@ -15,7 +15,11 @@ public class MyBST <Ttype>{
     }
 
     public void insert(Ttype element){
-        if (isEmpty())root = new MyTreeNode(element);
+        if (isEmpty()){
+            root = new MyTreeNode(element);
+            counter++;
+        }
+
         else {
             // izsaukt rrekursivo funkciju pirmo reizi
             insertHelpRecursive( root,element);
@@ -25,6 +29,7 @@ public class MyBST <Ttype>{
 
     private void insertHelpRecursive(MyTreeNode tempNode, Ttype element){
         // apakskoka sakne ir lielaks par elementu
+        System.out.println(tempNode);
         if (((Comparable)tempNode.getElement()).compareTo(element) == 1){
             // kreisais berns neeksiste
             if (tempNode.getLeftChild() == null){
@@ -64,7 +69,7 @@ public class MyBST <Ttype>{
         if (isEmpty()) throw new Exception("Koks ir tukšs");
 
         // TODO izsaukt rekursovo printesanas funkciju
-
+        printHelpRecursivePreOrder(root);
 
     }
     //TODO izveidit majas ari PostOrder
