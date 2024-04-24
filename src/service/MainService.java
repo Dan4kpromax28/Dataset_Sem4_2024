@@ -13,6 +13,9 @@ public class MainService {
         bstWithIntegera.insert(6);
         try {
             bstWithIntegera.print();
+
+            System.out.println("3? -> " + bstWithIntegera.search(3));
+            System.out.println("100? -> " + bstWithIntegera.search(100));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

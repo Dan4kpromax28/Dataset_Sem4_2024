@@ -89,4 +89,29 @@ public class MyBST <Ttype>{
         }
     }
 
+    public boolean search(Ttype element) throws Exception {
+        if (isEmpty()) throw new Exception("Koks ir tuks un nevar atrast");
+
+        return searchHelpRecursive(root, element);
+
+    }
+
+    private boolean searchHelpRecursive(MyTreeNode tempNode, Ttype element) throws Exception {
+        if (tempNode.getElement().equals(element)) return true;
+        if (((Comparable)tempNode.getElement()).compareTo(element) == 1 ){
+            if(tempNode.getLeftChild() != null) {
+                return searchHelpRecursive(tempNode.getLeftChild(), element);
+            }
+
+        } else if (((Comparable)tempNode.getElement()).compareTo(element) == -1) {
+            if (tempNode.getRightChild() != null) {
+                return searchHelpRecursive(tempNode.getRightChild(), element);
+            }
+
+        }
+
+        return false;
+
+    }
+
 }
